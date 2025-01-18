@@ -58,9 +58,7 @@
                  grade5 = (grade2 * 0.4) + (grade3 * 0.6);
                  document.getElementById('result5').textContent = `ציון סופי - 5 יחידות: ${grade5.toFixed(2)}`;
                  document.getElementById('result5').className = 'fs-5 mt-3 text-primary';
-
                 }
-                
             }
         }
 
@@ -85,41 +83,47 @@
 
     <div class="mb-4">
         <h2>חישוב ציון 3 יח"ל - יסודות ומטלת ביצוע</h2>
-        <div class="mb-3">
-            <label for="submission3" class="form-label">ציון הגשה (899371):</label>
-            <input type="number" class="form-control" id="submission3" min="0" max="100" step="1" oninput="onInputChange()">
-        </div>
-        <div class="mb-3">
-            <label for="exam3" class="form-label">ציון בגרות (899371):</label>
-            <input type="number" class="form-control" id="exam3" min="0" max="100" step="1" oninput="onInputChange()">
-        </div>
-        <div class="mb-3">
-            <label for="project3" class="form-label">ציון מטלת ביצוע (899373):</label>
-            <input type="number" class="form-control" id="project3" min="0" max="100" step="1" oninput="onInputChange()">
+        <div class="row g-3 align-items-center mb-3">
+            <div class="col-md-4">
+                <label for="submission3" class="form-label">ציון הגשה (899371):</label>
+                <input type="number" class="form-control" id="submission3" min="0" max="100" step="1" oninput="onInputChange()">
+            </div>
+            <div class="col-md-4">
+                <label for="exam3" class="form-label">ציון בגרות (899371):</label>
+                <input type="number" class="form-control" id="exam3" min="0" max="100" step="1" oninput="onInputChange()">
+            </div>
+            <div class="col-md-4">
+                <label for="project3" class="form-label">ציון מטלת ביצוע (899373):</label>
+                <input type="number" class="form-control" id="project3" min="0" max="100" step="1" oninput="onInputChange()">
+            </div>
         </div>
         <p id="result3" class="fs-5 mt-3 text-primary"></p>
     </div>
 
     <div class="mb-4">
         <h2>חישוב ציון 2 יח"ל - מבני נתונים ויחידה חמישית </h2>
-        <div class="mb-3">
-            <label for="submission2" class="form-label">ציון הגשה (899271):</label>
-            <input type="number" class="form-control" id="submission2" min="0" max="100" step="1" oninput="onInputChange()">
-        </div>
-        <div class="mb-3">
-            <label for="exam2" class="form-label">ציון בגרות (899271):</label>
-            <input type="number" class="form-control" id="exam2" min="0" max="100" step="1" oninput="onInputChange()">
+        <div class="row g-3 align-items-center mb-3">
+            <div class="col-md-6">
+                <label for="submission2" class="form-label">ציון הגשה (899271):</label>
+                <input type="number" class="form-control" id="submission2" min="0" max="100" step="1" oninput="onInputChange()">
+            </div>
+            <div class="col-md-6">
+                <label for="exam2" class="form-label">ציון בגרות (899271):</label>
+                <input type="number" class="form-control" id="exam2" min="0" max="100" step="1" oninput="onInputChange()">
+            </div>
         </div>
         <p id="result2" class="fs-5 mt-3"></p>
     </div>
-<div>
+
+    <div>
         <p id="result5" class="fs-5 text-success"></p>
     </div>
-    <button class="btn btn-secondary mb-4" onclick="resetForm()">איפוס טופס</button>
-   <footer class="mt-5 text-center">
-        <p>מבוסס על <a href="https://meyda.education.gov.il/files/CSIT//newExamsStructure.pdf" target="_blank">חוזר הבגרויות החדש במדעי המחשב</a></p>
-          <p>הערות ותיקונים - <a href="mailto:diskin.nir@gmail.com">לחץ כאן לשליחת אימייל</a></p>
-    </footer>
     
+    <button class="btn btn-secondary mb-4" onclick="resetForm()">איפוס טופס</button>
+    
+    <footer class="mt-5 text-center">
+        <p>מבוסס על <a href="https://meyda.education.gov.il/files/CSIT//newExamsStructure.pdf" target="_blank">חוזר הבגרויות החדש במדעי המחשב</a></p>
+        <p>הערות ותיקונים - <a href="mailto:diskin.nir@gmail.com">לחץ כאן לשליחת אימייל</a></p>
+    </footer>
 </body>
 </html>
