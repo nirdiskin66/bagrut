@@ -19,14 +19,18 @@
             // Validate inputs
             if ([submission3, exam3, project3].some(value => isNaN(value) || value < 0 || value > 100)) {
                 document.getElementById('result3').textContent = 'הכנס ערכים לכל השדות בין 0 ל 100';
-            } else {
+                document.getElementById('result3').className = 'fs-5 mt-3 text-danger';
+           } else {
                 // Calculate 3 Units Grade if inputs are valid
                 const grade3 = (submission3 * 0.3*0.6) + (exam3 * 0.7 * 0.6) + (project3 * 0.4);
                 document.getElementById('result3').textContent = `ציון 3 יחידות: ${grade3.toFixed(2)}`;
+                document.getElementById('result3').className = 'fs-5 mt-3 text-primary';
+
             }
 
             if ([submission2, exam2].some(value => isNaN(value) || value < 0 || value > 100)) {
                 document.getElementById('result2').textContent = 'הכנס ערכים לכל השדות בין 0 ל 100';
+                document.getElementById('result2').className = 'fs-5 mt-3 text-danger';
             } else {
                 // Calculate 2 Units Grade if inputs are valid
                 let grade2 = (submission2 * 0.4) + (exam2 * 0.6);
@@ -43,7 +47,7 @@
             // Calculate Final 5 Units Grade if all inputs are valid
             if ([submission3, exam3, project3, submission2, exam2].some(value => isNaN(value) || value < 0 || value > 100)) {
                 document.getElementById('result5').textContent = '';
-                                    		                       document.getElementById('result5Container').classList.add('d-none');
+                document.getElementById('result5Container').classList.add('d-none');
 
             } else {
                 const grade3 = (submission3 * 0.3*0.6) + (exam3 * 0.7 * 0.6) + (project3 * 0.4);
@@ -55,13 +59,13 @@
                     document.getElementById('result2').className = 'fs-5 mt-3 text-danger';
                     document.getElementById('result5').textContent = `אין ציון ב5 יח"ל`;
                     document.getElementById('result5').className = 'fs-5 mt-3 text-danger';
-                    		                       document.getElementById('result5Container').classList.remove('d-none');
+                    document.getElementById('result5Container').classList.remove('d-none');
                 }
                 else {
                  grade5 = (grade2 * 0.4) + (grade3 * 0.6);
                  document.getElementById('result5').textContent = `ציון סופי - 5 יחידות: ${grade5.toFixed(2)}`;
                  document.getElementById('result5').className = 'fs-5 mt-3 text-primary';
-                                     		                       document.getElementById('result5Container').classList.remove('d-none');
+                 document.getElementById('result5Container').classList.remove('d-none');
 
                 }
             }
