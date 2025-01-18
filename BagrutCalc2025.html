@@ -43,6 +43,8 @@
             // Calculate Final 5 Units Grade if all inputs are valid
             if ([submission3, exam3, project3, submission2, exam2].some(value => isNaN(value) || value < 0 || value > 100)) {
                 document.getElementById('result5').textContent = '';
+                                    		                       document.getElementById('result5Container').classList.add('d-none');
+
             } else {
                 const grade3 = (submission3 * 0.3*0.6) + (exam3 * 0.7 * 0.6) + (project3 * 0.4);
                 let grade2 = (submission2 * 0.4) + (exam2 * 0.6);
@@ -53,11 +55,14 @@
                     document.getElementById('result2').className = 'fs-5 mt-3 text-danger';
                     document.getElementById('result5').textContent = `אין ציון ב5 יח"ל`;
                     document.getElementById('result5').className = 'fs-5 mt-3 text-danger';
+                    		                       document.getElementById('result5Container').classList.remove('d-none');
                 }
                 else {
                  grade5 = (grade2 * 0.4) + (grade3 * 0.6);
                  document.getElementById('result5').textContent = `ציון סופי - 5 יחידות: ${grade5.toFixed(2)}`;
                  document.getElementById('result5').className = 'fs-5 mt-3 text-primary';
+                                     		                       document.getElementById('result5Container').classList.remove('d-none');
+
                 }
             }
         }
@@ -71,6 +76,7 @@
             document.getElementById('result3').textContent = '';
             document.getElementById('result2').textContent = '';
             document.getElementById('result5').textContent = '';
+            document.getElementById('result5Container').classList.add('d-none');
         }
 
         function onInputChange() {
@@ -81,7 +87,7 @@
 <body class="container py-5" dir="rtl">
     <h1 class="text-center mb-4">מחשבון ציון בגרות במדעי המחשב</h1>
 
-    <div class="mb-4">
+    <div class="mb-4 border rounded px-5 py-4">
         <h2>חישוב ציון 3 יח"ל - יסודות ומטלת ביצוע</h2>
         <div class="row g-3 align-items-center mb-3">
             <div class="col-md-4">
@@ -100,7 +106,7 @@
         <p id="result3" class="fs-5 mt-3 text-primary"></p>
     </div>
 
-    <div class="mb-4">
+    <div class="mb-4 border rounded px-5 py-4">
         <h2>חישוב ציון 2 יח"ל - מבני נתונים ויחידה חמישית </h2>
         <div class="row g-3 align-items-center mb-3">
             <div class="col-md-6">
@@ -115,7 +121,7 @@
         <p id="result2" class="fs-5 mt-3"></p>
     </div>
 
-    <div>
+    <div class="mb-4 border rounded px-5 py-4 d-none" id="result5Container">
         <p id="result5" class="fs-5 text-success"></p>
     </div>
     
